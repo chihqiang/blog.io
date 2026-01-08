@@ -22,5 +22,5 @@ jobs:
       with:
         publish_dir: repo/public
         target_branch: gh-pages
-        cname: blog.zhiqiang.wang
+        cname: www.zhiqiang.wang
         token: ${{ secrets.GH_TOKEN }}
