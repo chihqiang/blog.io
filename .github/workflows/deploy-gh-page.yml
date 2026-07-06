@@ -8,18 +8,21 @@ jobs:
     - name: Clone public repo via HTTPS
       uses: chihqiang/checkout-action@main
       with:
-        repo: ${{ secrets.PRIVATE_REPO }}
-        branch: main
+        repository: chihqiang/blog.hexo
+        ref: main
         token: ${{ secrets.GH_TOKEN }}
+        
     - name: Use Node.js 20
       uses: actions/setup-node@v3
       with:
         node-version: 20
+        
     - name: hexo build 
-      run: cd repo && make build
+      run: make build
+      
     - name: Publish to gh-pages branch
       uses: chihqiang/gh-pages-action@main
       with:
-        publish_dir: repo/public
+        publish_dir: public
         target_branch: gh-pages
         token: ${{ secrets.GH_TOKEN }}
