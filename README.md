@@ -1,2 +1,3 @@
-# blog.io
-my blog
+# website
+
+Personal blog website
